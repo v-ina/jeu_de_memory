@@ -1,0 +1,96 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+@font-face {
+  font-family: 'ubuntu';
+  src: url(./Ubuntu-Regular.ttf);
+}
+
+body{
+    font-family: 'ubuntu';
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    background-image: url(./img/codioful-formerly-gradienta-m_7p45JfXQo-unsplash.jpg);
+    background-size: cover;   
+}
+
+img{
+  height: 75%; width: 80%;
+}
+
+.container{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title{
+    font-size: 3rem;
+}
+
+.compteur{
+    margin-top: 20px;
+}
+
+.scene {
+    width: 800px;
+    height: 600px;
+    border: 1px solid transparent;
+    margin: 40px 0;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(3,1fr);
+    perspective: 600px;
+}
+
+.card {
+  aspect-ratio: 1/1;
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  cursor: pointer;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.card.is-flipped {
+  transform: rotateY( 180deg );
+}
+
+.card__face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 40px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card__face--front {
+  background: rgb(255, 255, 255);
+}
+
+.card__face--back {
+  background: rgb(143, 143, 143);
+  transform: rotateY( 180deg );
+}
+
